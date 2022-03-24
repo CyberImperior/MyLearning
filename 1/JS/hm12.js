@@ -13,10 +13,11 @@ let personalMovieDB = {
     genres: [],
     privat: false
 };
+
 for (let i = 1; i<=2; i++) {
     let movie = prompt('Один из последних просмотренных фильмов?');
     let grade = prompt('На сколько оцените его?');
-    personalMovieDB.movies[movie] = grade;
+    personalMovieDB.movies[movie] = grade; // Если через точку то выведется movie вместо значения переменной
     console.log(personalMovieDB);
 }
 

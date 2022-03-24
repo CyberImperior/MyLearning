@@ -72,3 +72,29 @@ console.log(incr);
 console.log(decr);
 
 let jack = 3 ? 32 ? 33 : 33: 33;
+
+// Цикл в котором сначала делается кода, затем проиверяется условие
+
+let num = 50;
+
+do {
+    console.log(num);
+    num++;
+} while (num < 55);
+
+// break 
+for (let i = 1; i < Infinity; i++) {
+    if (i === 6) {
+        break; // Цикл завершится
+    }
+    console.log(i);
+}
+// continue 
+for (let i = 1; i < Infinity; i++) {
+    if (i === 6) {
+        continue; // 6 будет пропущена
+    }
+    console.log(i);
+}
+
+// Object.keys(personalMovieDB.movies).length подсчитывает количество ключей в масиве
