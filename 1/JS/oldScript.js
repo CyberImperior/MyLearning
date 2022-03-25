@@ -175,6 +175,254 @@ const testNum = '12.25px';
 console.log(parseInt(testNum)); // 12
 console.log(parseFloat(testNum)); // 12.2
 
+useStrict();
+
+
+function first() {
+    setTimeout(function() {
+        console.log(1);
+    }, 500);
+}
+
+function second() {
+    console.log(2);
+}
+
+first();
+second();
+
+// callback это функция, которая должна быть выполнена, когда предыдущая функция завершила свое выполенние
+function learnJS(lang, callback) {
+    console.log(`Я учу: ${lang}`);
+    callback();
+}
+function done() {
+    console.log('Я прошел этот урок');
+}
+learnJS('JavaScript', done);
+
+// let ObjConstructor = new Object(); // синтаксис "конструктор объекта"
+// let ObjLiteral = {};  // синтаксис "литерал объекта"
+
+useStrict();
+
+let options ={
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'solid',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log('Тест');
+    }
+};
+options.makeTest();
+console.log('1232'.length); // Прототип
+// Диструктуризация важно 
+const {border, bg} = options.colors;
+console.log(border);
+// ВАЖНО ЧТО ТАК МОЖНО console.log(options['colors']['bg']);
+//delete options.name;
+
+//console.log(options);
+
+function showPropsAndParams() {
+for (let key in options) {
+    if (typeof options[key] == 'object') {
+        for (let key2 in options[key]) {
+            console.log(`Свойство ${key2} имеет значение ${options[key][key2]}`);
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${options[key]}`); // с точкой не работает
+    }
+}}
+
+// Считает количество свойств у объекта
+function countObjectProps(object) {
+    let count = 0;
+    for (let i in object) {
+        count++;
+    }
+    return console.log(count);
+}
+
+console.log(Object.keys(options)); // возращает массив ключей
+console.log(Object.keys(options).length); // возращает количество ключей
+
+// Как lenght соотносится с индексами lenght = последний индекс + 1
+const array = [1, 2, 3, 4, 8, 6];
+
+const str1 = prompt('', '');
+const products = str1.split(', ');
+// Функция для каждого элемента массива
+array.forEach(function(item, i, array) {
+    console.log(`${i}: ${item} внутри массива ${array}`);
+});
+
+
+array[99]=0; // Образуются пустые элементы масива
+console.log(array);
+
+array.push(10); // Добавляется элемент в конец
+array.pop(); // Удаляет последний элемент
+array.unshift(5); // Добавляет элемент в начало, ИНДЕКСЫ СДВИГАЮТСЯ
+array.shift(); // Удаляет первый элемент, ИНДЕКСЫ СДВИГАЮТСЯ
+
+// for (let i = 0; i < array.length; i++) {
+//     console.log(array[i]);
+// }
+
+// перебирает каждый элемент в массиве in перебирает индексы of сами элементы массива 
+// Отличия от .forEach мы можем использовать break и continue
+for (let value of array) {
+    console.log(value);
+}
+
+const str11 = prompt('', '');
+const products1 = str11.split(', '); // Делит строку на массив по тому что в скобках
+products1.sort(); // Сортирует элементы как строки по буквам
+console.log(products1.join(' и ')); // Соединят элементы массива по тому что в скобках
+
+// Как lenght соотносится с индексами lenght = последний индекс + 1
+
+array.sort(); // Сортирует числа построчно
+array.sort(compareNum); // Нормальная сортировка чисел
+console.log(array); 
+
+function compareNum(a, b) {
+    return a - b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function useStrict() {
+    'use strict';
+    return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
