@@ -98,3 +98,48 @@ for (let i = 1; i < Infinity; i++) {
 }
 
 // Object.keys(personalMovieDB.movies).length подсчитывает количество ключей в масиве
+
+
+
+let num1 = 20; // сначал функция ищет значени внутри себя затем на уровень выше
+
+function showFirstMessage(text) { // text = то что в скобках присваевается
+    console.log(`${text} `);
+    let num1 = 30;
+    console.log(num1);
+}
+
+showFirstMessage();
+console.log(num1);
+
+// function calc (a, b) {
+//     return (a + b);
+//     console.log('doesn work'); // unreacheble code после return код не выполняется
+// }
+
+// console.log(calc(12, 32));
+
+function ret() {
+    let num1 = 50;
+    return num1;
+}
+
+const anotherNum1 = ret();
+console.log(anotherNum1);
+
+const logger = function() {
+    console.log('hello');
+}; // function expresion после функции точка запятой
+
+// Стрелочная функция
+
+const calc = (a, b) => a + b;
+console.log( calc(5, 6) );
+
+const calc2 = (a, b) => {
+    console.log('1');
+    return a + b;
+};
+
+
+
