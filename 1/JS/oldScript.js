@@ -143,3 +143,76 @@ const calc2 = (a, b) => {
 
 
 
+useStrict();
+
+let str = 'teSt';
+const arr1 = [1,2,3];
+
+const testObj = {
+    name: 'russel',
+    lastName: 'Crown'
+};
+
+console.log(testObj.name);
+console.log(str.length); // length это свойство
+
+console.dir(Number);
+
+console.log(str.toUpperCase());
+console.log(str.toLowerCase());
+console.log(str);
+
+const fruit = 'Some fruit';
+console.log(fruit.indexOf('f')); // вернет 5, если нет буквы то вернет -1
+
+const logg = 'hi world';
+console.log(logg.slice(3, 8)); // обрежет и вернет world  последняя буква не включается
+console.log(logg.slice(-5, -1)); // worl
+
+console.log(logg.substring(3,8)); // тоже что и slice только без отрицательных значений
+
+const testNum = '12.25px';
+console.log(parseInt(testNum)); // 12
+console.log(parseFloat(testNum)); // 12.2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
