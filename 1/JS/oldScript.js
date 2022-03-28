@@ -222,7 +222,7 @@ options.makeTest();
 console.log('1232'.length); // Прототип
 // Диструктуризация важно 
 const {border, bg} = options.colors;
-console.log(border);
+console.log(border); 
 // ВАЖНО ЧТО ТАК МОЖНО console.log(options['colors']['bg']);
 //delete options.name;
 
@@ -295,13 +295,81 @@ function compareNum(a, b) {
     return a - b;
 }
 
+let a = 5,
+    b = a;
+
+b = b + 5;
+
+console.log(b);
+console.log(a);
+
+const obj3 = {
+    a: 5,
+    b: 1
+};
+
+const copy = obj3; // Передача по ссылке меняться будет, если модифицировать будет модифицироваться весь объект
+
+copy.a = 10;
+
+console.log(obj3.a);
+
+// Цикл для задачи копии объекта (NewObject[i] - задает ключ) (для поверхностной копии)
+function copyObject(object) {
+    let NewObject = {};
+    for (let i in object) {
+        NewObject[i] = object[i];
+    }
+    return NewObject;
+}
+
+const addObj = {
+    d: 17,
+    e: 20
+};
+
+const obj5 = {
+    a: 5,
+    b: 1,
+    colors: {
+        border: 'solid',
+        bg: 'red'
+    }
+};
+
+// Соединение объектов
+console.log(Object.assign(obj5, addObj));
+
+// Отдельная копия объекта
+const cloneObj = Object.assign({}, addObj);
+
+// Создание копии массива
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
 
 
+// Соединение массивов оператор разворота
+const video = ['youtube', 'vimeo', 'rutuve'],
+      blogs = ['wordpress', 'livejournal', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook'];              
 
+// Оператор разворота, вычленяет аргументы для функции
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
+const valABC = [2, 3, 5];
+log(...valABC);
 
-
-
-
+// Spread - оператор разворота поверхностно копирует массив и объект
+const arraySpread = ['a', 'b'];
+const newArraySpread = [...arraySpread];
+const spreadObject = {
+    one: 1,
+    two: 2,
+};
+//const newSpreadObj = {...spreadObject};
 
 
 
