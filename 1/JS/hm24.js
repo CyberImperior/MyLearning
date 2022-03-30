@@ -5,21 +5,19 @@ function useStrict() {
     return true;
 }
 
-let numberOfFilms = 0;
-
 const personalMovieDB = { //DB - database
-    count: numberOfFilms,
+    count: 0,
     movies: {},
     actors: {},
     genres: [],
     privat: false,
     writeNumbersOfFilms: function () {
-        numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели');
-        if (personalMovieDB.checkInputText(numberOfFilms)) {
-            personalMovieDB.count = numberOfFilms;
+        personalMovieDB.count = +prompt('Сколько фильмов вы уже посмотрели');
+        if (personalMovieDB.checkInputText(personalMovieDB.count)) {
+            personalMovieDB.count = personalMovieDB.count;
             personalMovieDB.showWhatViewerYou();
         } else {
-            numberOfFilms = 0;
+            personalMovieDB.count = 0;
             alert('Неккоректное значение');
             personalMovieDB.writeNumbersOfFilms();
         }
@@ -36,7 +34,7 @@ const personalMovieDB = { //DB - database
         }
     },
     showMyDB: function () {
-        if (personalMovieDB.privat == false) {
+        if (!personalMovieDB.privat) {
             console.log(personalMovieDB);
         } else {
             console.log('Нет прав доступа');
@@ -78,7 +76,7 @@ const personalMovieDB = { //DB - database
 
     },
     toggleVisibleMyDB: function () {
-        if (personalMovieDB.privat === true) {
+        if (personalMovieDB.privat) {
             personalMovieDB.privat = false;
         } else {
             personalMovieDB.privat = true;
