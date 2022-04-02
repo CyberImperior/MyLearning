@@ -30,10 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
     addForm.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        let newFilm = addInput.value;
+        let newFilm = addInput.value.toLowerCase();
+
         const favorite = checkbox.checked;
+        
 
         if (newFilm) {
+            
+            if (favorite) {
+                console.log('добавлено в избраное');
+            }
 
             if (newFilm.length > 15) {
                 newFilm = `${newFilm.slice(0, 16)}...`;
@@ -41,8 +47,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             movieDB.movies.push(newFilm);
             sortArr(movieDB.movies);
-    
+
             createMovieList(movieDB.movies, MovieList);
+
         }
         event.target.reset();
     });
@@ -57,14 +64,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     </li>
                 `;
         });
-        document.querySelector('.delete').forEach((btn, i) => {
-            btn.addEventListener('click', () => {
-                btn.parentElement.remove();
+        const delMovie = parent.querySelectorAll('.delete');
+
+        delMovie.forEach((item, i) => {
+
+            delMovie[i].addEventListener('click', () => {
+                delMovie[i].parentElement.remove();
                 films.splice(i, 1);
+                sortArr(films);
+                createMovieList(films, parent);
+                console.log(films);
             });
         });
     }
 
+
+
+    console.log(MovieList);
     const deleteAdv = (arr) => {
         arr.forEach(item => {
             item.remove();
@@ -83,6 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
     deleteAdv(promoAdvImg);
     makeChanges();
     createMovieList(movieDB.movies, MovieList);
+
 
 
 
